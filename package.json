@@ -1,10 +1,44 @@
 {
   "name": "bacon-package",
   "version": "1.0.0",
-  "main": "index.js",
-  "author": "Maciej <jajarzombek@gmail.com>",
+  "description": "Hello world package",
+  "author": "mcj <jajarzombek@gmail.com>",
   "license": "MIT",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "test": "jest --config jestconfig.json",
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "yarn build",
+    "prepublishOnly": "yarn test && yarn run lint",
+    "preversion": "yarn run lint",
+    "version": "yarn run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "files": [
+    "lib/**/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jajarzombek/bacon-package.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jajarzombek/bacon-package.git/issues"
+  },
+  "homepage": "https://github.com/jajarzombek/bacon-package.git#readme",
   "devDependencies": {
+    "@types/jest": "^24.9.0",
+    "jest": "^25.1.0",
+    "prettier": "^1.19.1",
+    "ts-jest": "^24.3.0",
+    "tslint": "^6.0.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.7.5"
-  }
+  },
+  "keywords": [
+    "hello",
+    "world"
+  ]
 }
