@@ -1,0 +1,10 @@
+{
+  "name": "bacon-package",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Maciej <jajarzombek@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^3.7.5"
+  }
+}
